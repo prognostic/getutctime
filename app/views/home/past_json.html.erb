@@ -1,0 +1,181 @@
+
+<p>City : <%= @json["data"]["request"][0]["query"] %> </p>
+
+<div class="tabs">
+       	  <div class="tabber">
+
+     
+
+    <% @json["data"]["weather"].each do |weather| %>
+     <div class="tabbertab">
+	  <h2><%= weather["date"] %></h2>
+	  
+	  
+	    <div style="float:left; height:auto">
+	    <% weather["astronomy"].each do |astro| %>
+      <table class="table table-striped">
+              
+              <tbody>
+                <tr> 
+                  <th>Sunrise</th>
+                  <td><%= astro["sunrise"] %></td>
+                </tr>
+                <tr>
+                  <th>Sunset</th>
+                  <td><%= astro["sunset"] %></td>
+                </tr>
+                <tr>
+                  <th>Moonrise</th>
+                  <td><%= astro["moonrise"] %></td>
+                </tr>
+                <tr>
+                  <th>Moonset</th>
+                  <td><%= astro["moonset"] %></td>
+                </tr>
+                <tr>
+                  <th>Maximum Temperature Celsius</th>
+                  <td><%= astro["maxtempC"] %> &deg; C</td>
+                </tr>
+                <tr>
+                  <th>Minimum Temperature Celsius</th>
+                  <td><%= astro["mintempC"] %> &deg; C</td>
+                </tr>
+                <tr>
+                  <th>Maximum Temperature Farenheit</th>
+                  <td><%= astro["maxtempF"] %> F</td>
+                </tr>
+                <tr>
+                  <th>Minimum Temperature Farenheit</th>
+                  <td><%= astro["mintempF"] %> F</td>
+                </tr>
+                
+              </tbody>
+        </table>
+        <% end %>
+        
+        <table class="table table-striped">
+        <tr><td colspan="2">Hourly</td></tr>
+    
+        <% weather["hourly"].each do |h| %>
+          <tr>
+            <th>Time</th>
+            <td><%= h["time"] %></td>
+          </tr>
+          
+          <tr>
+            <th>Temp C</th>
+            <td><%= h["tempC"] %> C</td>
+          </tr>
+          
+          <tr>
+            <th>Temp F</th>
+            <td><%= h["tempF"] %> F</td>
+          </tr>
+          <tr>
+            <th>Wind speed Miles</th>
+            <td><%= h["windspeedMiles"] %></td>
+          </tr>
+          <tr>
+            <th>Wind speed Kmph</th>
+            <td><%= h["windspeedKmph"] %> </td>
+          </tr>
+          <tr>
+            <th>Wind direction Degree</th>
+            <td><%= h["winddirDegree"] %> </td>
+          </tr>
+          <tr>
+            <th>Wind direction 16 Point</th>
+            <td><%= h["winddir16Point"] %></td>
+          </tr>
+          <tr>
+            <th>Weather Code</th>
+            <td><%= h["weatherCode"] %></td>
+          </tr>
+          <tr>
+            <th>WeatherIcon</th>
+            <td><%= image_tag h["weatherIconUrl"][0]["value"] %> </td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td><%= h["weatherDesc"][0]["value"] %> </td>
+          </tr>
+          <tr>
+            <th>PrecipMM</th>
+            <td><%= h["precipMM"] %> </td>
+          </tr>
+          <tr>
+            <th>Humidity</th>
+            <td><%= h["humidity"] %> </td>
+          </tr>
+          <tr>
+            <th>Visibility</th>
+            <td><%= h["visibility"] %> </td>
+          </tr>
+          <tr>
+            <th>Pressure</th>
+            <td><%= h["pressure"] %> </td>
+          </tr>
+          <tr>
+            <th>Cloud Cover</th>
+            <td><%= h["cloudcover"] %> </td>
+          </tr>
+          <tr>
+            <th>Heat Index C</th>
+            <td><%= h["HeatIndexC"] %> </td>
+          </tr>
+          <tr>
+            <th>Heat Index F</th>
+            <td><%= h["HeatIndexF"] %> </td>
+          </tr>
+          <tr>
+            <th>Dew Point C</th>
+            <td><%= h["DewPointC"] %> </td>
+          </tr>
+          <tr>
+            <th>Dew Point F</th>
+            <td><%= h["DewPointF"] %> </td>
+          </tr>
+          <tr>
+            <th>Wind Chill C</th>
+            <td><%= h["WindChillC"] %> </td>
+          </tr>
+          <tr>
+            <th>Wind Chill F</th>
+            <td><%= h["WindChillF"] %> </td>
+          </tr>
+          <tr>
+            <th>Wind Gust Miles</th>
+            <td><%= h["WindGustMiles"] %> </td>
+          </tr>
+          <tr>
+            <th>Wind Gust Kmph</th>
+            <td><%= h["WindGustKmph"] %> </td>
+          </tr>
+          <tr>
+            <th>Feels Like C</th>
+            <td><%= h["FeelsLikeC"] %> </td>
+          </tr>
+          <tr>
+            <th>Feels Like F</th>
+            <td><%= h["FeelsLikeF"] %> </td>
+          </tr>
+
+        <% end %>
+        
+         </table>
+		
+		</div>
+     </div>
+
+     <% end %>
+     
+	 
+	 
+
+</div>
+          
+           <div class="clear"></div>       
+  </div>
+
+
+

@@ -1,0 +1,338 @@
+<div class="tabs">
+       	  <div class="tabber">
+
+     <div class="tabbertab">
+	   <h2>Observe</h2>
+	  
+	  
+	  <div style="float:left; width:30%; height:auto"><img src="<%= @data1.css("current_condition").css("weatherIconUrl").text %>" /></div>
+	  
+	    <div style="float:left; width:70%; height:auto">
+		
+      <table width="50%" class="table table-striped">
+              
+              <tbody>
+                <tr>
+                 
+                  <th>City</th>
+                  <td><%= @data1.css("query").text %></td>
+                </tr>
+                <tr>
+                  <th>Observation Time</th>
+                  <td><%= @data1.css("current_condition").css("observation_time").text %></td>
+                </tr>
+                <tr>
+                  <th>Temperature Celsius</th>
+                  <td><%= @data1.css("current_condition").css("temp_C").text %> &deg; C</td>
+                </tr>
+                <tr>
+                  <th>Temperature Farenheit</th>
+                  <td><%= @data1.css("current_condition").css("temp_F").text %> F</td>
+                </tr>
+                <tr>
+                  <th>Weather Code</th>
+                  <td><%= @data1.css("current_condition").css("weatherCode").text %></td>
+                </tr>
+                
+                <tr>
+                  <th>Description</th>
+                  <td><%= @data1.css("current_condition").css("weatherDesc").text %></td>
+                </tr>
+                <tr>
+                  <th>Wind speed Miles</th>
+                  <td><%= @data1.css("current_condition").css("windspeedMiles").text %></td>
+                </tr>
+                <tr>
+                  <th>Wind speed Kmph</th>
+                  <td><%= @data1.css("current_condition").css("windspeedKmph").text %></td>
+                </tr>
+                <tr>
+                  <th>Wind direction Degree</th>
+                  <td><%= @data1.css("current_condition").css("winddirDegree").text %></td>
+                </tr>
+                <tr>
+                  <th>Wind direction 16 Point</th>
+                  <td><%= @data1.css("current_condition").css("winddir16Point").text %></td>
+                </tr>
+                <tr>
+                  <th>precip MM</th>
+                  <td><%= @data1.css("current_condition").css("precipMM").text %></td>
+                </tr>
+                <tr>
+                  <th>Humidity</th>
+                  <td><%= @data1.css("current_condition").css("humidity").text %> </td>
+                </tr>
+                <tr>
+                  <th>Visibility</th>
+                  <td><%= @data1.css("current_condition").css("visibility").text %></td>
+                </tr>
+                <tr>
+                  <th>Pressure</th>
+                  <td><%= @data1.css("current_condition").css("pressure").text %></td>
+                </tr>
+                <tr>
+                  <th>cloud cover</th>
+                  <td><%= @data1.css("current_condition").css("cloudcover").text %></td>
+                </tr>
+                <tr>
+                  <th>Feels Like C</th>
+                  <td><%= @data1.css("current_condition").css("FeelsLikeC").text %></td>
+                </tr>
+                <tr>
+                  <th>Feels Like F</th>
+                  <td><%= @data1.css("current_condition").css("FeelsLikeF").text %></td>
+                </tr>
+              </tbody>
+        </table>
+		
+		</div>
+     </div>
+
+    <% @data1.css("weather").each do |oldw| %>
+     <div class="tabbertab">
+	  <h2><%= oldw.css("date").text %></h2>
+	  
+	  
+	    <div style="float:left; height:auto">
+      <table class="table table-striped">
+              
+              <tbody>
+                <tr>
+                 
+                  <th>Sunrise</th>
+                  <td><%= oldw.css("astronomy").css("sunrise").text %></td>
+                </tr>
+                <tr>
+                  <th>Sunset</th>
+                  <td><%= oldw.css("astronomy").css("sunset").text %></td>
+                </tr>
+                <tr>
+                  <th>Moonrise</th>
+                  <td><%= oldw.css("astronomy").css("moonrise").text %></td>
+                </tr>
+                <tr>
+                  <th>Moonset</th>
+                  <td><%= oldw.css("astronomy").css("moonset").text %></td>
+                </tr>
+                <tr>
+                  <th>Maximum Temperature Celsius</th>
+                  <td><%= oldw.css("maxtempC").text %> C</td>
+                </tr>
+                <tr>
+                  <th>Minimum Temperature Celsius</th>
+                  <td><%= oldw.css("mintempC").text %> C</td>
+                </tr>
+                <tr>
+                  <th>Maximum Temperature Farenheit</th>
+                  <td><%= oldw.css("maxtempF").text %> F</td>
+                </tr>
+                <tr>
+                  <th>Minimum Temperature Farenheit</th>
+                  <td><%= oldw.css("mintempF").text %></td>
+                </tr>
+                
+              </tbody>
+        </table>
+        
+        <table class="table table-striped">
+        <tr><td colspan="2">Hourly</td></tr>
+        
+        <% @data1.css("hourly").each do |hrly| %>
+          <tr>
+            <th>Time</th>
+            <td><%= hrly.css("time").text %></td>
+          </tr>
+          
+          <tr>
+            <th>Temp C</th>
+            <td><%= hrly.css("tempC").text %> C</td>
+          </tr>
+          
+          <tr>
+            <th>Temp F</th>
+            <td><%= hrly.css("tempF").text %> F</td>
+          </tr>
+          <tr>
+            <th>Wind speed Miles</th>
+            <td><%= hrly.css("windspeedMiles").text %></td>
+          </tr>
+          <tr>
+            <th>Wind speed Kmph</th>
+            <td><%= hrly.css("windspeedKmph").text %> </td>
+          </tr>
+          <tr>
+            <th>Wind direction Degree</th>
+            <td><%= hrly.css("winddirDegree").text %> </td>
+          </tr>
+          <tr>
+            <th>Wind direction 16 Point</th>
+            <td><%= hrly.css("winddir16Point").text %> </td>
+          </tr>
+          <tr>
+            <th>Weather Code</th>
+            <td><%= hrly.css("weatherCode").text %> </td>
+          </tr>
+          <tr>
+            <th>WeatherIconUrl</th>
+            <td><img src="<%= hrly.css("weatherIconUrl").text %>" /> </td>
+          </tr>
+          <tr>
+            <th>Description</th>
+            <td><%= hrly.css("weatherDesc").text %> </td>
+          </tr>
+          <tr>
+            <th>PrecipMM</th>
+            <td><%= hrly.css("precipMM").text %> </td>
+          </tr>
+          <tr>
+            <th>Humidity</th>
+            <td><%= hrly.css("humidity").text %> </td>
+          </tr>
+          <tr>
+            <th>Visibility</th>
+            <td><%= hrly.css("visibility").text %> </td>
+          </tr>
+          <tr>
+            <th>Pressure</th>
+            <td><%= hrly.css("pressure").text %> </td>
+          </tr>
+          <tr>
+            <th>Cloud cover</th>
+            <td><%= hrly.css("cloudcover").text %> </td>
+          </tr>
+          <tr>
+            <th>Heat Index C</th>
+            <td><%= hrly.css("HeatIndexC").text %> </td>
+          </tr>
+          <tr>
+            <th>Heat Index F</th>
+            <td><%= hrly.css("HeatIndexF").text %> </td>
+          </tr>
+          <tr>
+            <th>Dew Point C</th>
+            <td><%= hrly.css("DewPointC").text %> </td>
+          </tr>
+          <tr>
+            <th>Dew Point F</th>
+            <td><%= hrly.css("DewPointF").text %> </td>
+          </tr>
+          <tr>
+            <th>Wind Chill C</th>
+            <td><%= hrly.css("WindChillC").text %> </td>
+          </tr>
+          <tr>
+            <th>Wind Chill F</th>
+            <td><%= hrly.css("WindChillF").text %> </td>
+          </tr>
+          <tr>
+            <th>Wind Gust Miles</th>
+            <td><%= hrly.css("WindGustMiles").text %> </td>
+          </tr>
+          <tr>
+            <th>Wind Gust Kmph</th>
+            <td><%= hrly.css("WindGustKmph").text %> </td>
+          </tr>
+          <tr>
+            <th>Feels Like C</th>
+            <td><%= hrly.css("FeelsLikeC").text %> </td>
+          </tr>
+          <tr>
+            <th>Feels Like F</th>
+            <td><%= hrly.css("FeelsLikeF").text %> </td>
+          </tr>
+          <tr>
+            <th>Chance of rain</th>
+            <td><%= hrly.css("chanceofrain").text %> </td>
+          </tr>
+          <tr>
+            <th>Chance of remdry</th>
+            <td><%= hrly.css("chanceofremdry").text %> </td>
+          </tr>
+          <tr>
+            <th>Chance of windy</th>
+            <td><%= hrly.css("chanceofwindy").text %> </td>
+          </tr>
+          <tr>
+            <th>Chance of overcast</th>
+            <td><%= hrly.css("chanceofovercast").text %> </td>
+          </tr>
+          <tr>
+            <th>chance of sunshine</th>
+            <td><%= hrly.css("chanceofsunshine").text %> </td>
+          </tr>
+          <tr>
+            <th>Chanceoffrost</th>
+            <td><%= hrly.css("chanceoffrost").text %> </td>
+          </tr>
+          <tr>
+            <th>Chance of high temp</th>
+            <td><%= hrly.css("chanceofhightemp").text %> </td>
+          </tr>
+          <tr>
+            <th>Chance of fog</th>
+            <td><%= hrly.css("chanceoffog").text %> </td>
+          </tr>
+          <tr>
+            <th>Chance of snow</th>
+            <td><%= hrly.css("chanceofsnow").text %> </td>
+          </tr>
+          <tr>
+            <th>Chance of thunder</th>
+            <td><%= hrly.css("chanceofthunder").text %> </td>
+          </tr>
+
+        <% end %>
+        
+         </table>
+		
+		</div>
+     </div>
+
+     <% end %>
+     
+     
+     
+      <div class="tabbertab">
+  	    <h2>ClimateAverages</h2>
+  	    <div style="float:left; height:auto">
+
+  	    <% @data1.css("month").each do |ca| %>
+        <table class="table table-striped">
+        <tr>
+           <td>Name</td>
+           <td><%= ca.css("name").text %></td>
+        </tr>
+        <tr>
+            <td>Absolute maximum Temperature Celsius</td>
+            <td><%= ca.css("absMaxTemp").text %> </td>
+         </tr>
+         <tr>
+             <td>Absolute maximum Temperature Fahrenheit</td>
+             <td><%= ca.css("absMaxTemp_F").text %></td>
+          </tr>
+          <tr>
+              <td>Average minimun Temperature Celsius</td>
+              <td><%= ca.css("avgMinTemp").text %></td>
+          </tr>
+          <tr>
+                <td>Average minimun Temperature Fahrenheit</td>
+                <td><%= ca.css("avgMinTemp_F").text %></td>
+          </tr>
+          <tr>
+              <td colspan="2">&nbsp;</td>
+          </tr>
+          
+        </table>
+
+        <% end %>
+
+ 		</div>
+     </div>
+     
+	 
+	 
+
+</div>
+          
+           <div class="clear"></div>       
+  </div>
