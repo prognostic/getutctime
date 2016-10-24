@@ -5,12 +5,18 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
+# Use the sqlite gem on the local envoirnment. 
+gem 'sqlite3'
 
+# Nokogiri gem is used to parse the XML format into the rails application
 gem 'nokogiri'
+
+# Json gem is used to parse the json format into the rails application
 gem 'json'
 
-gem 'pg'
+
+# Pg(postgrace) gem is used to support the deployment on heroku server. User can use any other database as per his requirement.
+#gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.

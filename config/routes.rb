@@ -1,19 +1,8 @@
 PremiumWeatherApi::Application.routes.draw do
-  
-  match '/local' => 'home#local_json'
-  match '/time' => 'home#time_json'
-  match '/search' => 'home#search_json'
-  match '/marine' => 'home#marine_json'
-  match '/past' => 'home#past_json'
-  
-  
-  match 'past-weather' => 'home#past'
-  match 'marine-weather' => 'home#marine'
-  match 'time-zone-weather' => 'home#timezone'
-  match 'search-weather' => 'home#search'
-  
+
   root :to => 'home#index'
-  
+  match '/time' => 'home#index'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

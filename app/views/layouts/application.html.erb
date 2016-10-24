@@ -1,46 +1,13 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
-<title>Premium Weather Api</title>
-<%= stylesheet_link_tag    "application", :media => "all" %>
-<%= javascript_include_tag "application" %>
-</head>
-
-<body>
-
-  <div id="wraper">
-    <div>
-      <%= link_to "Local Weather XML", root_path, :class=> (controller.controller_name == 'home' && params[:action] == 'index') ? "btn btn-info" : "btn" %>
-      <%= link_to "Past Weather XML", {:controller=>"home", :action=>"past"}, :class=> (controller.controller_name == 'home' && params[:action] == 'past') ? "btn btn-info" : "btn" %>
-      <%= link_to "Marine Weather XML", {:controller=>"home", :action=>"marine"}, :class=> (controller.controller_name == 'home' && params[:action] == 'marine') ? "btn btn-info" : "btn" %>
-      <%= link_to "Time Zone Weather XML", {:controller=>"home", :action=>"timezone"}, :class=> (controller.controller_name == 'home' && params[:action] == 'timezone') ? "btn btn-info" : "btn" %>
-      <%= link_to "Search API XML", {:controller=>"home", :action=>"search"}, :class=> (controller.controller_name == 'home' && params[:action] == 'search') ? "btn btn-info" : "btn" %> <br/><br/>
-      
-      
-      <%= link_to "Local Weather JSON", {:controller=>"home", :action=>"local_json"}, :class=> (controller.controller_name == 'home' && params[:action] == 'local_json') ? "btn btn-info" : "btn" %>
-      <%= link_to "Past Weather JSON", {:controller=>"home", :action=>"past_json"}, :class=> (controller.controller_name == 'home' && params[:action] == 'past_json') ? "btn btn-info" : "btn" %>
-      <%= link_to "Marine Weather JSON", {:controller=>"home", :action=>"marine_json"}, :class=> (controller.controller_name == 'home' && params[:action] == 'marine_json') ? "btn btn-info" : "btn" %>
-      <%= link_to "Time Zone Weather JSON", {:controller=>"home", :action=>"time_json"}, :class=> (controller.controller_name == 'home' && params[:action] == 'time_json') ? "btn btn-info" : "btn" %>
-      <%= link_to "Search API JSON", {:controller=>"home", :action=>"search_json"}, :class=> (controller.controller_name == 'home' && params[:action] == 'search_json') ? "btn btn-info" : "btn" %>
-      
-    </div>
-
-
-    <%= yield %>
-
-
-		 
-		 
-
-</div>
-<script type="text/javascript">
-<!--
-var TabbedPanels1 = new Spry.Widget.TabbedPanels("TabbedPanels1");
-//-->
-</script>
-
-</body>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+		<title>Premium Weather Api</title>
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+	</head>
+	<body>
+		<%= yield %>
+	</body>
 </html>
