@@ -8,6 +8,8 @@ gem 'rails', '3.2.11'
 # Use the sqlite gem on the local envoirnment. 
 #gem 'sqlite3'
 
+gem 'pg'
+
 # Nokogiri gem is used to parse the XML format into the rails application
 gem 'nokogiri'
 
