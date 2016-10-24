@@ -6,7 +6,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Use the sqlite gem on the local envoirnment. 
-gem 'sqlite3'
+#gem 'sqlite3'
 
 # Nokogiri gem is used to parse the XML format into the rails application
 gem 'nokogiri'
